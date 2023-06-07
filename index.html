@@ -1,12 +1,39 @@
 <!DOCTYPE html><html><head>
     <meta charset="utf-8">
     <title>Yew App</title>
-    <link rel="stylesheet" href="/tailwind-7eb1c0d1624be110.css">
+    <link rel="stylesheet" href="/tailwind-826d5da0cf13a3eb.css">
     <link rel="stylesheet" href="/index-52c9be205028cf30.css">
     
     
   
-<link rel="preload" href="/bgpsim-web-76597fce727148c6_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
-<link rel="modulepreload" href="/bgpsim-web-76597fce727148c6.js"></head>
+<link rel="preload" href="/bgpsim-web-f3bc4eb8561498ca_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
+<link rel="modulepreload" href="/bgpsim-web-f3bc4eb8561498ca.js"></head>
 <body>
-<script type="module">import init from '/bgpsim-web-76597fce727148c6.js';init('/bgpsim-web-76597fce727148c6_bg.wasm');</script></body></html>
+<script type="module">import init from '/bgpsim-web-f3bc4eb8561498ca.js';init('/bgpsim-web-f3bc4eb8561498ca_bg.wasm');</script><script>(function () {
+    var protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+    var url = protocol + '//' + window.location.host + '/_trunk/ws';
+    var poll_interval = 5000;
+    var reload_upon_connect = () => {
+        window.setTimeout(
+            () => {
+                // when we successfully reconnect, we'll force a
+                // reload (since we presumably lost connection to
+                // trunk due to it being killed, so it will have
+                // rebuilt on restart)
+                var ws = new WebSocket(url);
+                ws.onopen = () => window.location.reload();
+                ws.onclose = reload_upon_connect;
+            },
+            poll_interval);
+    };
+
+    var ws = new WebSocket(url);
+    ws.onmessage = (ev) => {
+        const msg = JSON.parse(ev.data);
+        if (msg.reload) {
+            window.location.reload();
+        }
+    };
+    ws.onclose = reload_upon_connect;
+})()
+</script></body></html>
