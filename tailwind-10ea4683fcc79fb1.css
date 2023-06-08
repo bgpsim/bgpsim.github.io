@@ -905,14 +905,14 @@ video {
   border-collapse: separate;
 }
 
-.border-spacing-x-3 {
-  --tw-border-spacing-x: 0.75rem;
-  border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
-}
-
 .border-spacing-2 {
   --tw-border-spacing-x: 0.5rem;
   --tw-border-spacing-y: 0.5rem;
+  border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
+}
+
+.border-spacing-x-3 {
+  --tw-border-spacing-x: 0.75rem;
   border-spacing: var(--tw-border-spacing-x) var(--tw-border-spacing-y);
 }
 
@@ -1556,8 +1556,8 @@ video {
   opacity: 0;
 }
 
-.opacity-30 {
-  opacity: 0.3;
+.opacity-20 {
+  opacity: 0.2;
 }
 
 .mix-blend-multiply {
