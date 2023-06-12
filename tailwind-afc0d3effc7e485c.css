@@ -1542,6 +1542,16 @@ video {
   color: rgb(var(--color-base5) / var(--tw-text-opacity));
 }
 
+.underline {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
+.decoration-base-5 {
+  -webkit-text-decoration-color: rgb(var(--color-base5) / 1);
+          text-decoration-color: rgb(var(--color-base5) / 1);
+}
+
 .opacity-0 {
   opacity: 0;
 }
@@ -1779,6 +1789,11 @@ video {
 .hover\:text-red:hover {
   --tw-text-opacity: 1;
   color: rgb(var(--color-red) / var(--tw-text-opacity));
+}
+
+.hover\:decoration-blue:hover {
+  -webkit-text-decoration-color: rgb(var(--color-blue) / 1);
+          text-decoration-color: rgb(var(--color-blue) / 1);
 }
 
 .hover\:shadow-lg:hover {
