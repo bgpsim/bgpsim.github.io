@@ -705,12 +705,12 @@ video {
   margin-left: 2rem;
 }
 
-.ml-20 {
-  margin-left: 5rem;
-}
-
 .mr-2 {
   margin-right: 0.5rem;
+}
+
+.ml-20 {
+  margin-left: 5rem;
 }
 
 .mt-0\.5 {
@@ -817,12 +817,12 @@ video {
   width: 24rem;
 }
 
-.w-40 {
-  width: 10rem;
-}
-
 .w-5 {
   width: 1.25rem;
+}
+
+.w-40 {
+  width: 10rem;
 }
 
 .w-32 {
