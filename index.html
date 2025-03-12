@@ -1,8 +1,10 @@
-<!DOCTYPE html><html><head>
-    <meta charset="utf-8">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
     <title>BGP Sim</title>
-    <link rel="stylesheet" href="/tailwind-1805d2ca5be4f047.css">
-    <link rel="stylesheet" href="/index-db0b6ae80d2c372d.css">
+    <link rel="stylesheet" href="/tailwind-5499b7785866bd38.css" integrity="sha384&#x2D;X4OtxWUVFHu73YU9aG1KBZ79YRsH6pVxKdhfRSqBONNIqPSqM0&#x2B;&#x2B;K7cH8O0Fn1vC"/>
+    <link rel="stylesheet" href="/index-db0b6ae80d2c372d.css" integrity="sha384&#x2D;OofAFVZy0ITl0ZSmtl9PXkRgiz&#x2B;Z2&#x2F;N&#x2B;WDwZfwt70r56PRXFJ8Bhrv4MDi&#x2F;VTEIT"/>
     
     
     
@@ -10,8 +12,8 @@
     
     
     <link rel="icon" href="favicon_only.svg">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="no" />
     <script>
       const paramsString = window.location.search;
       const params = new URLSearchParams(paramsString);
@@ -19,8 +21,17 @@
         window.location.replace("https://bgpsim.github.io/legacy/v0_13" + window.location.search);
       }
     </script>
-  
-<link rel="preload" href="/bgpsim-web-218d7d3fa0eb20d0_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
-<link rel="modulepreload" href="/bgpsim-web-218d7d3fa0eb20d0.js"></head>
-<body>
-<script type="module">import init from '/bgpsim-web-218d7d3fa0eb20d0.js';init('/bgpsim-web-218d7d3fa0eb20d0_bg.wasm');</script></body></html>
+  <link rel="modulepreload" href="/bgpsim-web-a0c3cc1eb15ff635.js" crossorigin="anonymous" integrity="sha384-MYlzcCQTWD67D6x1KeA+W4z5xDHpZ8tb7G/FCGduF5tF556XaiJXZYa/ErA1uPuT"><link rel="preload" href="/bgpsim-web-a0c3cc1eb15ff635_bg.wasm" crossorigin="anonymous" integrity="sha384-DfNzPcj8HKfBtOIwy15mTCeNuZW1IILvdwSOebmm7t7nwnwqx3uve7+Ey/Ijjdr6" as="fetch" type="application/wasm"></head>
+  <body />
+
+<script type="module">
+import init, * as bindings from '/bgpsim-web-a0c3cc1eb15ff635.js';
+const wasm = await init({ module_or_path: '/bgpsim-web-a0c3cc1eb15ff635_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script></html>
